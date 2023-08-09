@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/posts.css">
+    <link rel="stylesheet" href="styles/profile-popup.css">
+    <link rel="stylesheet" href="styles/review-popup.css">
+    <link rel="stylesheet" href="styles/collections.css">
+  </head>
+  <body>
+    <!--Header start-->
+    <header class="header">
+      <div class="site-name">
+        Website
+      </div>
+    </header>
+    <!--Header end-->
+
+    <!--Sidebar start-->
+    <nav class="sidebar">
+      <ul class="navbar-nav"> <!--unordered list-->
+        <li class="nav-item"> <!--ordered list-->
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-user-group" style="color: #cecece;"></i>
+            <span class="link-text">Followers</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-plus" style="color: #cecece;"></i>
+            <span class="link-text">Post</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-bookmark" style="color: #cecece;"></i>
+            <span class="link-text">Collections</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-gear" style="color: #cecece;"></i>
+            <span class="link-text">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!--Sidebar end-->
+
+    <!--Main section-->
+    <main>
+      <section class="profile-container">
+        <div class="profile-info-row">
+          <div class="profile-picture">
+            <img class="profile-image js-edit-pic-btn" src="profile-pictures/blank_profile.jpg">
+          </div>
+
+          <div class="profile-info">
+            <div class="username-container">
+              <p class="username js-edit-username-btn">
+                @username
+              </p>
+            </div>
+
+            <div class="stats">
+              <p class="reviews">Reviews: 0</p>
+              <p class="likes">Likes: 0</p>
+              <p class="followers">Followers: 0</p>
+              <p class="following">Following: 0</p>
+            </div>
+
+            <p class="biography">
+              Biography blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+            </p>
+
+            <button class="edit-profile-button js-edit-bio-btn">
+              <i class="fa-solid fa-pen edit-icon" style="color: #cecece;"></i>
+            </button>
+          </div>
+        </div>
+
+        <!--Grid containing review cards/posts-->
+        <div class="posts-grid">
+          <div class="post-container">
+            <div class="post-card js-post-card">
+              <img src="profile-pictures/boygenius-profile-picture.jpg" class="post-artist">
+              <img src="album-covers/the-record.jpg" class="post-album">
+              <p class="post-rating">10.0</p>
+              <p class="post-album-name">"the record"</p>
+              <p class="post-artist-name">boygenius</p>
+              <p class="preview">"The record" is aptly titled because it is THE only record ever. Nothing else will ever top it in terms of lyrical and sonic virtuosity. Lucy, ... </p>
+              <div class="overlay"></div>
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="post-card">
+
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="post-card">
+
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="post-card">
+
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="post-card">
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Edit profile popup start-->
+    <div class="profile-popup" id="profile-popup">
+      <div class="popup-heading">
+        <p class="popup-title">Customize your profile!</p>
+        <button class="save-btn">Save</button>
+        <div class="exit-btn js-exit-btn">
+          <i class="fa-solid fa-xmark exit-profile" style="color: #cecece;"></i>
+        </div>
+      </div>
+
+      <div class="edit-profile-container">
+        <div class="profile-picture">
+          <img class="edit-profile-image" src="profile-pictures/blank_profile.jpg">
+        </div>
+
+        <div class="edit-profile-info">
+          <input placeholder="Username"
+          class="username-input" value="currentuser">
+          <textarea placeholder="Tell us about yourself!"
+          class="bio-input">Existing bio blah blah blah</textarea>
+        </div>
+      </div>
+    </div>
+    <!--End edit profile popup-->
+
+    <!--Expanded review window-->
+    <!--have a function that queries which card was pressed to determine the review information, album cover, artist, etc to be displayed in the popup (using .innerHTML)-->
+    <div class="review-popup" id="review-popup">
+      <div class="review-popup-artist-container">
+        <img src="profile-pictures/boygenius-profile-picture.jpg" class="review-popup-artist-pic">
+        <div class="review-overlay"></div>
+      </div>
+      <img src="album-covers/the-record.jpg" class="review-popup-album-pic">
+      <p class="popup-album-name">
+        "the record"<br>&#160
+        <span class="popup-artist-name">boygenius</span>
+      </p>
+      <p class="popup-rating">Rating: <span class="rating-value">10.0</span>/10</p>
+      <p class="avg-user-rating">Average user rating: 8.2</p>
+      <div class="review-profile-info-row">
+        <img class="review-profile-image" src="profile-pictures/blank_profile.jpg">
+        <p class="review-profile-name">@username</p>
+      </div>
+      <div class="review-interact-row">
+        <i class="fa-regular fa-heart" style="color: #cecece;"></i>
+        <p class="num-likes">1.3k</p>
+        <i class="fa-regular fa-comment" style="color: #cecece;"></i>
+        <p class="num-comments">52</p>
+        <i class="fa-regular fa-bookmark" style="color: #cecece;"></i>
+      </div>
+      <p class="review-text">"The record" is aptly titled because it is THE only record ever. Nothing else will ever top it in terms of lyrical and sonic virtuosity. Dacus, Baker, and Bridgers deliver breathtaking vocal performances in what is undoubtedly a contender for album of the century. "The record" is aptly titled because it is THE only record ever. Nothing else will ever top it in terms of lyrical and sonic virtuosity. Dacus, Baker, and Bridgers deliver breathtaking vocal performances in what is undoubtedly a contender for album of the century.<br><br>"The record" is aptly titled because it is THE only record ever. Nothing else will ever top it in terms of lyrical and sonic virtuosity. Dacus, Baker, and Bridgers deliver breathtaking vocal performances in what is undoubtedly a contender for album of the century.</p>
+      <i class="fa-solid fa-xmark exit-review js-exit-review" style="color: #cecece;"></i>
+    </div>
+    <!--End expanded review window-->
+
+    <!--Backdrop for when popups are open-->
+    <div class="backdrop" id="backdrop"></div>
+
+    <!--Scripts-->
+    <script src="scripts/profile.js"></script>
+    <script src="scripts/review.js"></script>
+  </body>
+</html>

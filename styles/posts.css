@@ -1,0 +1,121 @@
+.posts-grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.post-container {
+  height: 305px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-card {
+  background-color: grey;
+  height: 275px;
+  width: 204px;
+  margin: auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.32);
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.post-card:hover {
+  cursor: pointer;
+  box-shadow: 9px 10px 10px rgba(0, 0, 0, 0.32);
+  transform: rotate(-2deg) scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 25%);
+}
+
+.post-artist {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: brightness(0.7);
+}
+
+.post-album {
+  position: absolute;
+  height: 115px;
+  width: 115px;
+  border-radius: 50%;
+  top: 10px;
+  left: 10px;
+}
+
+.post-rating {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.post-album-name {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  top: 80px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.post-artist-name {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 130px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 17px;
+}
+
+.preview {
+  position: absolute;
+  padding: 0 15px;
+  top: 170px;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 16px;
+  color: rgba(206, 206, 206, 0.7)
+}
+
+/* Small screens */
+@media only screen and (max-width: 520px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium screens */
+@media only screen and (min-width: 521px) and (max-width: 800px) {
+  .posts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 801px) {
+  .posts-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

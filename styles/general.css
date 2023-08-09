@@ -1,0 +1,198 @@
+:root {
+  font-family: Arial;
+  font-size: 15px;
+  --bg-primary: rgb(145, 122, 57);
+  --text-primary: rgb(206, 206, 206);
+  --heading-bg: rgb(51, 50, 50);
+  --sidebar-bg: rgb(49, 76, 118);
+  --sidebar-hover: rgb(72, 111, 172);
+  --postcard-bg: rgb(71, 71, 226);
+  --popup-bg: rgb(64, 99, 155);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  margin-left: 4rem;
+}
+
+.profile-container {
+  margin: auto;
+  margin-top: 75px;
+}
+
+.profile-info-row {
+  display: flex;
+  position: relative;
+}
+
+.profile-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin: 19px;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.2);
+  border-color: var(--postcard-bg);
+  border-style: solid;
+  border-width: 3px;
+}
+
+.profile-image:hover {
+  cursor: pointer;
+}
+
+.profile-info {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.username {
+  font-size: 35px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.username:hover {
+  cursor: pointer;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.biography {
+  margin-top: 0;
+  height: 110px;
+
+  position: relative;
+}
+
+.edit-profile-button {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.edit-profile-button:hover {
+  cursor: pointer;
+}
+
+.edit-icon {
+  height: 20px;
+  font-size: 20px;
+  transition: font-size 0.15s;
+}
+
+.edit-icon:hover {
+  font-size: 25px;
+}
+
+/* Small screens */
+@media only screen and (max-width: 520px) {
+  .profile-container {
+    width: 300px;
+  }
+
+  .profile-info-row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reviews,
+  .likes,
+  .followers,
+  .following {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .biography {
+    margin-top: 10px;
+  }
+
+  .username-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    margin-top: 0;
+  }
+
+  .username {
+    margin: 0;
+  }
+
+  .profile-info {
+    margin-right: 0;
+  }
+}
+
+/* Medium screens */
+@media only screen and (min-width: 521px) and (max-width: 800px) {
+  .profile-container {
+    width: 466px;
+  }
+
+  .profile-info-row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reviews,
+  .likes {
+    margin-bottom: 5px;
+  }
+
+  .followers,
+  .following {
+    margin-top: 5px;
+  }
+
+  .username-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .username {
+    margin: 0;
+  }
+
+  .profile-info {
+    margin-left: 20px;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 801px) {
+  .profile-container {
+    width: 700px;
+  }
+}

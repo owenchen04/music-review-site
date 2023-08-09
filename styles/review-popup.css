@@ -1,0 +1,211 @@
+.review-popup {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  background-color: var(--sidebar-bg);
+  width: 75%;
+  max-width: 700px;
+  min-height: 400px;
+  max-height: 85%;
+  z-index: 1001;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  transform: translate(-50%) scale(0.01);
+  visibility: hidden;
+
+  transition: transform 0.3s, visibility 0.3s;
+}
+
+/* Change the scrollbar style */
+.review-popup::-webkit-scrollbar {
+  width: 12px;
+}
+
+.review-popup::-webkit-scrollbar-track {
+  background: var(--sidebar-bg);
+}
+
+.review-popup::-webkit-scrollbar-thumb {
+  background: var(--sidebar-hover);
+}
+
+.open-review-popup {
+  visibility: visible;
+  transform: translate(-50%) scale(1);
+}
+
+.review-popup-artist-container {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 290px;
+}
+
+.review-popup-artist-pic {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.review-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to top, rgba(49, 76, 118, 1) 0%, rgba(0, 0, 0, 0) 50%);
+}
+
+.review-popup-album-pic {
+  position: absolute;
+  left: 20px;
+  top: 150px;
+  width: 120px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.popup-album-name {
+  position: absolute;
+  margin: 0;
+  top: 180px;
+  left: 150px;
+  max-width: 200px;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.popup-artist-name {
+  font-size: 17px;
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.popup-rating {
+  position: absolute;
+  text-align: right;
+  margin: 0;
+  right: 20px;
+  top: 190px;
+}
+
+.rating-value {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.avg-user-rating {
+  position: absolute;
+  text-align: right;
+  margin: 0;
+  right: 20px;
+  top: 230px;
+}
+
+.review-profile-info-row {
+  margin-top: 8px;
+  margin-bottom: 0;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.review-profile-image {
+  width: 50px;
+  border-radius: 50%;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.review-profile-name {
+  margin: 0;
+  font-size: 18px;
+}
+
+.review-interact-row {
+  position: absolute;
+  align-items: center;
+  display: flex;
+  right: 20px;
+  top: 300px;
+  font-size: 20px;
+}
+
+.review-interact-row i {
+  margin-left: 13px;
+}
+
+.num-likes,
+.num-comments {
+  font-family: Arial;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.review-text {
+  margin: 20px;
+}
+
+.exit-review {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  transition: top 0.15s, right 0.15s, font-size 0.15s;
+}
+
+.exit-review:hover {
+  top: 13px;
+  right: 13px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/*Small screens*/
+@media only screen and (max-width: 520px) {
+  .popup-rating {
+    text-align: left;
+    left: 20px;
+    top: 290px;
+  }
+
+  .avg-user-rating {
+    text-align: left;
+    left: 20px;
+    top: 330px;
+  }
+
+  .review-profile-info-row {
+    margin-top: 120px;
+  }
+
+  .review-interact-row {
+    top: 355px;
+    left: 7px;
+  }
+}
+
+/*Medium screens*/
+@media only screen and (min-width: 521px) and (max-width: 730px) {
+  .popup-rating {
+    text-align: left;
+    left: 20px;
+    top: 290px;
+  }
+
+  .avg-user-rating {
+    right: 20px;
+    top: 303px;
+  }
+
+  .review-profile-info-row {
+    margin-top: 60px;
+  }
+
+  .review-interact-row {
+    top: 350px;
+  }
+}

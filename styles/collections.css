@@ -1,0 +1,139 @@
+.collections {
+  margin: auto;
+  margin-top: 75px;
+}
+
+.collections-heading {
+  font-size: 35px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.collections-tabs-selector {
+  display: flex;
+}
+
+.collections-tabs-selector-disable {
+  display: none;
+}
+
+.collections-tab {
+  font-size: 18px;
+  margin-right: 2rem;
+}
+
+.collections-tab:hover {
+  font-weight: bold;
+  margin-right: 1.35rem;
+  cursor: pointer;
+}
+
+.collections-grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.collection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 235px;
+}
+
+.collection-cover {
+  height: 204px;
+  width: 204px;
+  margin: auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.32);
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.collection-cover:hover {
+  cursor: pointer;
+  box-shadow: 9px 10px 10px rgba(0, 0, 0, 0.32);
+  transform: rotate(-2deg) scale(1.05);
+}
+
+.collection-cover-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: brightness(0.45);
+}
+
+.collection-name {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  top: 50px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.num-reviews {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  top: 100px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Small screens */
+@media only screen and (max-width: 520px) {
+  .collections {
+    width: 300px;
+  }
+
+  .collections-tabs-selector {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .collections-tab {
+    margin-bottom: 0;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr;
+    margin-top: 15px;
+  }
+}
+
+/* Medium screens */
+@media only screen and (min-width: 521px) and (max-width: 800px) {
+  .collections {
+    width: 466px;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 801px) {
+  .collections {
+    width: 700px;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

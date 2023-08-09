@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Collections Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/posts.css">
+    <link rel="stylesheet" href="styles/profile-popup.css">
+    <link rel="stylesheet" href="styles/review-popup.css">
+    <link rel="stylesheet" href="styles/collections.css">
+  </head>
+  <body>
+    <!--Header start-->
+    <header class="header">
+      <div class="site-name">
+        Website
+      </div>
+    </header>
+    <!--Header end-->
+
+    <!--Sidebar start-->
+    <nav class="sidebar">
+      <ul class="navbar-nav"> <!--unordered list-->
+        <li class="nav-item"> <!--ordered list-->
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-user-group" style="color: #cecece;"></i>
+            <span class="link-text">Followers</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-plus" style="color: #cecece;"></i>
+            <span class="link-text">Post</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-bookmark" style="color: #cecece;"></i>
+            <span class="link-text">Collections</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-gear" style="color: #cecece;"></i>
+            <span class="link-text">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!--Sidebar end-->
+
+    <!--Main section-->
+    <main>
+      <!--COLLECTIONS HTML START-->
+      <section class="collections">
+        <h1 class="collections-heading" id="collections-heading">Collections</h1>
+        <div class="collections-tabs-selector" id="collections-tabs-selector">
+          <p class="collections-tab js-my-collections-tab">My Collections</p>
+          <p class="collections-tab js-saved-collections-tab">Saved Collections</p>
+        </div>
+
+        <div class="collections-grid" id="collectionGridContent">
+          <div class="collection-container js-collection-container">
+            <div class="collection-cover">
+              <img src="album-covers/the-record.jpg" class="collection-cover-img">
+              <p class="collection-name">Fav Reviews</p>
+              <p class="num-reviews">21 reviews</p>
+            </div>
+          </div>
+          <div class="collection-container js-collection-container">
+            <div class="collection-cover">
+              <img src="album-covers/melodrama.jpg" class="collection-cover-img">
+              <p class="collection-name">Must-Listens</p>
+              <p class="num-reviews">13 reviews</p>
+            </div>
+          </div>
+          <div class="collection-container js-collection-container">
+            <div class="collection-cover">
+              <img src="album-covers/honeymoon.jpg" class="collection-cover-img">
+              <p class="collection-name">Hot Takes</p>
+              <p class="num-reviews">8 reviews</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--COLLECTIONS HTML END-->
+    </main>
+
+    <!--Expanded review window-->
+    <!--have a function that queries which card was pressed to determine the review information, album cover, artist, etc to be displayed in the popup (using .innerHTML)-->
+    <div class="review-popup" id="review-popup">
+      <div class="review-popup-artist-container">
+        <img src="profile-pictures/boygenius-profile-picture.jpg" class="review-popup-artist-pic">
+        <div class="review-overlay"></div>
+      </div>
+      <img src="album-covers/the-record.jpg" class="review-popup-album-pic">
+      <p class="popup-album-name">
+        "the record"<br>&#160
+        <span class="popup-artist-name">boygenius</span>
+      </p>
+      <p class="popup-rating">Rating: <span class="rating-value">10.0</span>/10</p>
+      <p class="avg-user-rating">Average user rating: 8.2</p>
+      <div class="review-profile-info-row">
+        <img class="review-profile-image" src="profile-pictures/blank_profile.jpg">
+        <p class="review-profile-name">@username</p>
+      </div>
+      <div class="review-interact-row">
+        <i class="fa-regular fa-heart" style="color: #cecece;"></i>
+        <p class="num-likes">1.3k</p>
+        <i class="fa-regular fa-comment" style="color: #cecece;"></i>
+        <p class="num-comments">52</p>
+        <i class="fa-regular fa-bookmark" style="color: #cecece;"></i>
+      </div>
+      <p class="review-text">"The record" is aptly titled because it is THE only record ever. Nothing else will ever top it in terms of lyrical and sonic virtuosity. Dacus, Baker, and Bridgers deliver breathtaking vocal performances in what is undoubtedly a contender for album of the century. "The record" is aptly titled because it is THE only record ever. Nothing else will ever top it in terms of lyrical and sonic virtuosity. Dacus, Baker, and Bridgers deliver breathtaking vocal performances in what is undoubtedly a contender for album of the century.<br><br>"The record" is aptly titled because it is THE only record ever. Nothing else will ever top it in terms of lyrical and sonic virtuosity. Dacus, Baker, and Bridgers deliver breathtaking vocal performances in what is undoubtedly a contender for album of the century.</p>
+      <i class="fa-solid fa-xmark exit-review js-exit-review" style="color: #cecece;"></i>
+    </div>
+    <!--End expanded review window-->
+
+    <!--Backdrop for when popups are open-->
+    <div class="backdrop" id="backdrop"></div>
+
+    <!--Scripts-->
+    <script src="scripts/profile.js"></script>
+    <script src="scripts/review.js"></script>
+    <script src="scripts/collections.js"></script>
+  </body>
+</html>
